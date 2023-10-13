@@ -1,4 +1,15 @@
 import sys
-from PyQt5 import QtGui
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget
 
-#First Test
+def MainWindow():
+	app = QApplication([])
+	window = QWidget()
+	xsize = 800
+	ysize = 600
+	window.setGeometry(0,0,xsize,ysize)
+	window.setWindowTitle("First Try")
+
+	window.show()
+	app.exec()
+	
+MainWindow()
