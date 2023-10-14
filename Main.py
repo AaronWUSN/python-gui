@@ -1,14 +1,25 @@
 import sys
 from PyQt5.QtCore import QSize, Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout
 
-class MainWindow(QMainWindow):
+
+class MainWindow(QWidget):
 	def __init__(self):
 		super().__init__()
+		self.initUI()
+	
+	def initUI(self):
+		NewGame = QPushButton(text = "New Game")
+		LoadGame = QPushButton(text = "Load Game")
+		box = QVBoxLayout()
+		box.addWidget(NewGame)
+		box.addWidget(LoadGame)
+		box.setAlignment(Qt.AlignVCenter)
+		self.setLayout(box)
+		self.setGeometry(100,100,800,600)
 		self.setWindowTitle("First Try")
-		xsize = 800
-		ysize = 600
-		self. setGeometry(0,0,xsize,ysize)
+		self.show()
+		
 	
 app = QApplication(sys.argv)
 	
